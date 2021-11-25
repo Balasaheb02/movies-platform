@@ -1,0 +1,16 @@
+.mat-table-container {
+  max-width: 100%;
+  overflow: auto;
+  height: calc(100vh - 240px);
+}
+
+.table-section {
+  margin: 40px;
+}
+
+.table-title{
+    background-color: #fff;
+    display: flex;
+    padding: 10px;
+    justify-content: space-between;
+}

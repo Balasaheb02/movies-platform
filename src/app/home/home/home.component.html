@@ -1,1 +1,99 @@
-<p>home works!</p>
+<div class="table-section">
+    <div class="table-title">
+        <h3>Coming Soon Movies</h3>
+        <button mat-raised-button color="accent" (click)="refreshComingSoon()">Reload</button>
+    </div>
+    <div class="mat-table-container ">
+        <mat-table #table [dataSource]="dataSource" multiTemplateDataRows matSort class="mat-table-bg">
+
+            <ng-container matColumnDef="title">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Title </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element?.title}} </mat-cell>
+            </ng-container>
+
+
+            <ng-container matColumnDef="year">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Year </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element?.year}} </mat-cell>
+            </ng-container>
+
+
+            <ng-container matColumnDef="genres">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Genres </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element?.genres}} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="stars">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Stars </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element?.stars}} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="releaseState">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Release Data </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element?.releaseState}} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="directors">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Directors </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element?.directors}} </mat-cell>
+            </ng-container>
+
+            <mat-header-row *matHeaderRowDef=" displayComingSoonMovies; sticky: true"></mat-header-row>
+            <mat-row *matRowDef="let row; columns:  displayComingSoonMovies;" matRipple class="element-row"></mat-row>
+        </mat-table>
+        <div class="table-loader d-flex flex-column" *ngIf="(loading1$ | async)">
+            <ngx-skeleton-loader count="10"></ngx-skeleton-loader>
+        </div>
+    </div>
+</div>
+
+
+<div class="table-section">
+    <div class="table-title">
+        <h3>In Theater Movies</h3>
+        <button mat-raised-button color="accent" (click)="refreshTheaterMovie()">Reload</button>
+    </div>
+    <div class="mat-table-container mat-table-bg">
+        <mat-table #table [dataSource]="dataSource2" multiTemplateDataRows matSort class="mat-table-bg">
+
+            <ng-container matColumnDef="title">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Title </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element?.title}} </mat-cell>
+            </ng-container>
+
+
+            <ng-container matColumnDef="year">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Year </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element?.year}} </mat-cell>
+            </ng-container>
+
+
+            <ng-container matColumnDef="genres">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Genres </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element?.genres}} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="stars">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Stars </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element?.stars}} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="releaseState">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Release Data </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element?.releaseState}} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="directors">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Directors </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element?.directors}} </mat-cell>
+            </ng-container>
+
+            <mat-header-row *matHeaderRowDef=" displayInTheaterSoonMovies; sticky: true"></mat-header-row>
+            <mat-row *matRowDef="let row; columns:  displayInTheaterSoonMovies;" matRipple class="element-row">
+            </mat-row>
+        </mat-table>
+        <div class="table-loader d-flex flex-column" *ngIf="(loading2$ | async)">
+            <ngx-skeleton-loader count="10"></ngx-skeleton-loader>
+        </div>
+    </div>
+</div>

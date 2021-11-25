@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  pexelsApiKey: 'k_na9kvnjg'
+  pexelsApiKey: 'k_glba9mcd'
 };
 
 /*

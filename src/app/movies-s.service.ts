@@ -13,8 +13,8 @@ export class MoviesSService {
 
     url = 'https://imdb-api.com/en/API/'
 
-  getAllMovies$ = this.http.get<any>(`${this.url}Top250Movies/k_na9kvnjg`);
-  getComingSoonMovies$ = this.http.get<any>(`${this.url}ComingSoon/k_na9kvnjg`);
-  getInTheaterMovies$ = this.http.get<any>(`${this.url}InTheaters/k_na9kvnjg`);
+  getAllMovies$ = this.http.get<any>(`${this.url}Top250Movies/k_glba9mcd`);
+  getComingSoonMovies$ = this.http.get<any>(`${this.url}ComingSoon/k_glba9mcd`);
+  getInTheaterMovies$ = this.http.get<any>(`${this.url}InTheaters/k_glba9mcd`);
   
 }

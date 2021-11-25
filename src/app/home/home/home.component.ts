@@ -47,14 +47,14 @@ export class HomeComponent implements OnInit {
   }
 
   refreshComingSoon(){
+    this.loading1.next(true);
     this.dataSource.data = [];
-    this.loading1.next(false);
     this.getComingSoonMovie();
   }
 
   refreshTheaterMovie(){
+    this.loading2.next(true);
     this.dataSource2.data = [];
-    this.loading2.next(false);
     this.getInTheaterMovie();
   }
 

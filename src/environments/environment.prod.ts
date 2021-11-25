@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
-  pexelsApiKey: 'k_na9kvnjg'
+  pexelsApiKey: 'k_glba9mcd'
 };
 
